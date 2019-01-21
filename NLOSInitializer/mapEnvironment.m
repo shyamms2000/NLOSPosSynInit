@@ -15,7 +15,7 @@ function SP=mapEnvironment(BS,SP,UEmean,UEcov,measurement)
 % henkw@chalmers.se
 Ns=100;
 N_SP=size(measurement,1);
-UEsamples=real(sqrtm(UEcov))*randn(5,Ns)+UEmean;                        % generate UE state samples
+UEsamples=real(sqrtm(UEcov))*randn(5,Ns)+UEmean*ones(1,Ns);                        % generate UE state samples
 UEsamples=UEsamples(1:3,:);                                               % only keep position
 ipsp=zeros(3,Ns,N_SP);
 for k=1:N_SP           
